@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div><h1>{{ msg }}</h1></div>
     <home-header></home-header>
   </div>
 </template>
@@ -12,11 +11,6 @@ export default {
   components: {HomeHeader},
   comments : {
     HomeHeader : HomeHeader
-  },
-  data () {
-    return {
-      msg: 'happy birthday to'
-    }
   }
 }
 </script>

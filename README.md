@@ -45,7 +45,15 @@ bash命令 : npm install fastclick --save
 # css开发辅助工具 stylus
 bash命令 : npm install stylus --save
           npm install stylus-loader --save
-
+# 页面样式布局
+* 移动端布局一般使用rem方式,注意样式编写的缩进布局
+1rem = html font-size=50px
+* 自定义全局样式
+导入使用 : @
+src目录表示 : '~@'
+* 自定义路径名称
+webpack.base.conf.js
+新路径名前加~
 
 
 
