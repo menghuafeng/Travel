@@ -54,10 +54,12 @@ src目录表示 : '~@'
 * 自定义路径名称
 webpack.base.conf.js
 新路径名前加~
-# 使用第三方首页轮播图插件vue-awesome-swiper
+# 使用第三方首页轮播图插件vue-awesome-swiper(index-swiper分支)
 npm install vue-awesome-swiper@2.6.7 --save
+# 图标区域的页面布局(index-icon分支)
 
-
+#chrome插件Vue.js devtools
+扩展程序中打开"允许访问文件网址"
 
 
 
