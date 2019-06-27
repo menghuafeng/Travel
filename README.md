@@ -63,11 +63,12 @@ npm install vue-awesome-swiper@2.6.7 --save
 #chrome插件Vue.js devtools
 扩展程序中打开"允许访问文件网址"
 
-# 使用axios发送ajax数据
+# 使用axios发送ajax数据 (index-ajax分支)
 安装axios cnpm install axios --save
 使用index.js中proxyTable代理机制转发路径
 
-
+# 城市选择页面-路由配置(city-router分支)
+varibles.style使用全局变量定义行高,方便之后统一修改页面行高表头
 
 
 
