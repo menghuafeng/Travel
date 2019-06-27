@@ -31,6 +31,8 @@ src   源码包
     App.vue   项目原始的根组件
     router    路由
     components    组件
+static 静态目录,可以被外部访问到(可以将放一些模拟测试的数据)
+.gitignore 不需要提交git的文件
 ## 项目问题及注意事项
 # 路由
 根据不同的网址,返回不同的内容
@@ -61,6 +63,9 @@ npm install vue-awesome-swiper@2.6.7 --save
 #chrome插件Vue.js devtools
 扩展程序中打开"允许访问文件网址"
 
+# 使用axios发送ajax数据
+安装axios cnpm install axios --save
+使用index.js中proxyTable代理机制转发路径
 
 
 
