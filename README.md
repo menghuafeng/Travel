@@ -70,6 +70,8 @@ npm install vue-awesome-swiper@2.6.7 --save
 # 城市选择页面-路由配置(city-router分支)
 varibles.style使用全局变量定义行高,方便之后统一修改页面行高表头
 
+# 城市列表页面布局(city-list分支)
+城市列表滚动效果插件 better-scroll(iscroll的封装)
 
 
 
