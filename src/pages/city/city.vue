@@ -2,8 +2,8 @@
   <div>
     <city-header></city-header>
     <city-search></city-search>
-    <city-list :cities="cities" :hotCities="hotCities"></city-list>
-    <city-alphabet :cities="cities"></city-alphabet>
+    <city-list :cities="cities" :hotCities="hotCities" :letter="letter"></city-list>
+    <city-alphabet :cities="cities" @change="handleChange"></city-alphabet>
   </div>
 </template>
 
@@ -24,14 +24,17 @@ export default {
   data(){
     return{
       cities : {},
-      hotCities : []
+      hotCities : [],
+      letter : '' // 字母列表组件传来的值
     }
   },
   methods : {
+    // 请求城市数据
     getCityInfo(){
       axios.get('/api/city.json')
         .then(this.getCityInfoSucc)
     },
+    // 数据渲染
     getCityInfoSucc(res){
       res = res.data
       if(res.ret && res.data){
@@ -39,6 +42,10 @@ export default {
         this.cities = data.cities
         this.hotCities = data.hotCities
       }
+    },
+    // 监听子组件事件,接收子组件数据
+    handleChange(letter){
+      this.letter = letter
     }
   },
   mounted(){
