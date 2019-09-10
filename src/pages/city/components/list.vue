@@ -40,7 +40,7 @@
       hotCities : Array,
       letter : String
     },
-    mounted (){
+    mounted () {
       this.scroll = new Bscroll(this.$refs.wrapper)
     },
     watch : {

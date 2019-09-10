@@ -1,7 +1,7 @@
 <template>
   <div>
     <city-header></city-header>
-    <city-search></city-search>
+    <city-search :cities="cities"></city-search>
     <city-list :cities="cities" :hotCities="hotCities" :letter="letter"></city-list>
     <city-alphabet :cities="cities" @change="handleChange"></city-alphabet>
   </div>
@@ -21,8 +21,8 @@ export default {
     CityList,
     CityAlphabet,
   },
-  data(){
-    return{
+  data () {
+    return {
       cities : {},
       hotCities : [],
       letter : '' // 字母列表组件传来的值

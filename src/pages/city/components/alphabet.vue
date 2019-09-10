@@ -61,7 +61,7 @@
             if(index >= 0 && index < this.letter.length){
               this.$emit('change' , this.letter[index])
             }
-          },6)
+          },5)
         }
       },
       handleTouchEnd(){
