@@ -88,3 +88,5 @@ Bscroll可以滚动定位,但是需要传递一个dom元素或者dom选择器进
 npm install vuex --save
 配置在store文件夹,vuex的作用就是实现不同组件之间的数据共享,提供一个公共的store来存储数据
 组件dispatch() -> actions -> commit() -> mutations  -> 修改state内容 
+
+# keep-alive实现页面数据的缓存,避免数据的重复加载,会新增一个生命周期函数activated
