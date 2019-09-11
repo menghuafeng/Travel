@@ -5,7 +5,7 @@
         <div class="title  border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-warrper">
-            <div class="button">北京</div>
+            <div class="button">{{this.currentCity}}</div>
           </div>
         </div>
       </div>
@@ -13,7 +13,7 @@
           <div class="title  border-topbottom">热门城市</div>
           <div class="button-list">
             <div class="button-warrper" v-for="item of hotCities" :key="item.id">
-              <div class="button">{{item.name}}</div>
+              <div class="button" @click="handleChangeCity(item.name)">{{item.name}}</div>
             </div>
           </div>
         </div>
@@ -22,7 +22,9 @@
           <div class="item-list">
             <div class="item border-bottom"
                  v-for="innerItem of item"
-                 :key="innerItem.id">
+                 :key="innerItem.id"
+                 @click="handleChangeCity(innerItem.name)"
+            >
               {{innerItem.name}}
             </div>
           </div>
@@ -33,12 +35,29 @@
 
 <script>
   import Bscroll from 'better-scroll'
+  import { mapState , mapMutations } from 'vuex'
   export default {
     name: 'CityList',
     props : {
       cities : Object,
       hotCities : Array,
       letter : String
+    },
+    computed : {
+      // ...展开运算符,将一个数组转为用逗号分隔的参数序列
+      ...mapState({
+        // 将vuex中的city映射到当前的currentCity
+        currentCity : 'city'
+      })
+    },
+    methods : {
+      handleChangeCity (city) {
+        // this.$store.commit('changeCity' , city)
+        this.changeCity(city)
+        this.$router.push('/')
+      },
+      // 将changeCity属性/方法 映射到当前的changeCity属性/方法中
+      ...mapMutations(['changeCity'])
     },
     mounted () {
       this.scroll = new Bscroll(this.$refs.wrapper)

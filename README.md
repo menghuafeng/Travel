@@ -84,5 +84,7 @@ Bscroll可以滚动定位,但是需要传递一个dom元素或者dom选择器进
 # 城市搜索功能(city-search-logic)
 需要考虑的情况: 1.没有搜索值时 2.有搜索值 3.未匹配到数据时 4.数据过长的滚动效果
 
-
-
+# 使用vuex实现数据共享(city-vuex)
+npm install vuex --save
+配置在store文件夹,vuex的作用就是实现不同组件之间的数据共享,提供一个公共的store来存储数据
+组件dispatch() -> actions -> commit() -> mutations  -> 修改state内容 

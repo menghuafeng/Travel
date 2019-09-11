@@ -1,6 +1,6 @@
 <template>
   <div>
-    <home-header v-bind:city = "city"></home-header>
+    <home-header></home-header>
     <home-swiper v-bind:swiperList = "swiperList"></home-swiper>
     <home-icons v-bind:iconList = "iconList"></home-icons>
     <home-recommend v-bind:recommendList = "recommendList"></home-recommend>
@@ -26,7 +26,6 @@ export default {
   },
   data (){
     return {
-      city: '',
       iconList: [],
       recommendList: [],
       swiperList: [],
@@ -41,7 +40,6 @@ export default {
     getHomeInfoSucc(res){
       res = res.data
       if(res.ret && res.data){
-        this.city = res.data.city
         this.iconList = res.data.iconList
         this.recommendList = res.data.recommendList
         this.swiperList = res.data.swiperList
