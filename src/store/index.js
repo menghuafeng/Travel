@@ -14,6 +14,8 @@ export default new Vuex.Store({
   //   }
   // },
   mutations : mutation ,
+
+
   // 类似computed 可以对state中的属性进行计算,避免数据的冗余
   getters : {
     doubleCity(state){

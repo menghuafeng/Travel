@@ -90,3 +90,8 @@ npm install vuex --save
 组件dispatch() -> actions -> commit() -> mutations  -> 修改state内容 
 
 # keep-alive实现页面数据的缓存,避免数据的重复加载,会新增一个生命周期函数activated
+
+#详情页面的图标(detail-banner)
+1.使用iconfont图标库,选择相应的图标添加至购物车,添加到自己的项目中,下载图标至本地
+找到需要用的图标文件复制到本地项目,同时注意修改iconfont.css中base64这行代码
+2.将图片轮播这个功能独立为一个组件gallary;注意swiper的用法(可查阅官网api)
