@@ -30,25 +30,25 @@ export default {
   },
   methods : {
     // 请求城市数据
-    getCityInfo(){
+    getCityInfo () {
       axios.get('/api/city.json')
         .then(this.getCityInfoSucc)
     },
     // 数据渲染
-    getCityInfoSucc(res){
+    getCityInfoSucc (res) {
       res = res.data
-      if(res.ret && res.data){
+      if (res.ret && res.data) {
         const data = res.data
         this.cities = data.cities
         this.hotCities = data.hotCities
       }
     },
     // 监听子组件事件,接收子组件数据
-    handleChange(letter){
+    handleChange (letter) {
       this.letter = letter
     }
   },
-  mounted(){
+  mounted () {
     this.getCityInfo();
   }
 }

@@ -47,6 +47,8 @@ bash命令 : npm install fastclick --save
 # css开发辅助工具 stylus
 bash命令 : npm install stylus --save
           npm install stylus-loader --save
+scoped  当组件有这个属性的时候,它的css样式仅仅作用于当前组件,实现了样式模块化;
+scoped穿透使用>>>   当引入第三方组件的时候,可能需要修改其中的样式,这时候使用( 外层 >>> 第三方组件 {样式} )
 # 页面样式布局
 * 移动端布局一般使用rem方式,注意样式编写的缩进布局
 1rem = html font-size=50px
@@ -91,7 +93,9 @@ npm install vuex --save
 
 # keep-alive实现页面数据的缓存,避免数据的重复加载,会新增一个生命周期函数activated
 
-#详情页面的图标(detail-banner)
+# 详情页面的图标(detail-banner)
 1.使用iconfont图标库,选择相应的图标添加至购物车,添加到自己的项目中,下载图标至本地
 找到需要用的图标文件复制到本地项目,同时注意修改iconfont.css中base64这行代码
 2.将图片轮播这个功能独立为一个组件gallary;注意swiper的用法(可查阅官网api)
+
+# 实现header渐隐渐现的效果(detail-header)

@@ -18,9 +18,9 @@
 
 <script>
   import CommonGallay from 'common/gallary/gallary'
-  export default{
+  export default {
     name : 'DetailBanner',
-    data (){
+    data () {
       return {
         showGallay : false,
         imgs : ['http://img1.qunarzz.com/sight/p0/1804/1a/1a48cc20b0d6ed44a3.img.jpg_r_800x800_9b21ceda.jpg',
@@ -29,10 +29,10 @@
       }
     },
     methods : {
-      handleBannerClick (){
+      handleBannerClick () {
         this.showGallay = true
       },
-      handleGallaryClose(){
+      handleGallaryClose () {
         this.showGallay = false
       }
     },

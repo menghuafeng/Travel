@@ -50,7 +50,7 @@
       handleTouchMove (e) {
         // 滑动时
         if(this.touchStatus) {
-          if(this.timer){
+          if(this.timer) {
             clearTimeout(this.timer)
           }
           this.timer = setTimeout(() => {
@@ -64,7 +64,7 @@
           },5)
         }
       },
-      handleTouchEnd(){
+      handleTouchEnd () {
         this.touchStatus = false
       }
     }

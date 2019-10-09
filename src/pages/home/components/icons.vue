@@ -68,7 +68,7 @@ export default{
       const pages = []
       this.iconList.forEach((item , index) => {
         const page = Math.floor(index / 8)
-        if(!pages[page]){
+        if (!pages[page]) {
           pages[page] = []
         }
         pages[page].push(item)

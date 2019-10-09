@@ -63,9 +63,9 @@
       this.scroll = new Bscroll(this.$refs.wrapper)
     },
     watch : {
-      letter(){
+      letter () {
         // console.log(this.letter)
-        if(this.letter){
+        if (this.letter) {
           // 这里的Bscroll可以滚动定位,但是需要传递一个dom元素或者dom选择器进去,所以[0]表示第一个元素
           const element = this.$refs[this.letter][0]
           this.scroll.scrollToElement(element)

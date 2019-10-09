@@ -48,7 +48,7 @@
         if (this.timer) {
           clearTimeout(this.timer)
         }
-        if(!this.keyword){
+        if (!this.keyword) {
           this.list = []
           return
         }

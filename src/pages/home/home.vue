@@ -38,13 +38,13 @@ export default {
     ...mapState(['city']),
   },
   methods: {
-    getHomeInfo(){
+    getHomeInfo () {
       axios.get('/api/homeinfo.json?city=' + this.city)
         .then(this.getHomeInfoSucc)
     },
-    getHomeInfoSucc(res){
+    getHomeInfoSucc (res) {
       res = res.data
-      if(res.ret && res.data){
+      if (res.ret && res.data) {
         this.iconList = res.data.iconList
         this.recommendList = res.data.recommendList
         this.swiperList = res.data.swiperList
