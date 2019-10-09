@@ -99,3 +99,5 @@ npm install vuex --save
 2.将图片轮播这个功能独立为一个组件gallary;注意swiper的用法(可查阅官网api)
 
 # 实现header渐隐渐现的效果(detail-header)
+在使用window对象进行事件绑定的时候,会对全局有一个事件绑定的效果,需要进行解绑
+增加了keep-alive组件之后,会新增两个生命周期钩子activated(每次页面展示) deactivated(页面被隐藏前)
