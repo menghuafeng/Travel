@@ -3,7 +3,7 @@
     <div class="wrapper">
       <!--初始化swiperList为空,图片顺序混乱,判断数据不为空时渲染数据-->
       <swiper :options="swiperOption">
-        <swiper-slide v-for="item in imgs">
+        <swiper-slide v-for="(item, index) in imgs" :key="index">
           <img class="gallary-img" :src="item">
         </swiper-slide>
         <div class="swiper-pagination"  slot="pagination"></div>
@@ -69,10 +69,10 @@
       height : 0
       width : 100%
       // 底部留白
-      padding-bottom : 100%
+      padding-bottom : 65%
       .gallary-img
         width : 100%
       .swiper-pagination
         color : #fff
-        bottom : -1rem
+        bottom : -3rem
 </style>
