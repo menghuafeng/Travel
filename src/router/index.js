@@ -1,8 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/pages/home/home'
-import City from '@/pages/city/city'
-import Detail from '@/pages/detail/detail'
 Vue.use(Router)
 
 export default new Router({
@@ -10,17 +7,17 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: () => import ('@/pages/home/home')
     },
     {
       path: '/city',
       name: 'City',
-      component: City
+      component: () => import ('@/pages/city/city')
     },
     {
       path: '/detail/:id',
       name: 'Detail',
-      component: Detail
+      component: () => import ('@/pages/detail/detail')
     }
   ],
   // vue-router 对于所有路由导航，简单地让页面滚动到顶部

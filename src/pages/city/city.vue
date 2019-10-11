@@ -1,9 +1,9 @@
 <template>
   <div>
     <city-header></city-header>
-    <city-search :cities="cities"></city-search>
+    <city-search :cities="cities" v-on:showMe="handleShowMe"></city-search>
     <city-list :cities="cities" :hotCities="hotCities" :letter="letter"></city-list>
-    <city-alphabet :cities="cities" @change="handleChange"></city-alphabet>
+    <city-alphabet v-if="showMe" :cities="cities" @change="handleChange"></city-alphabet>
   </div>
 </template>
 
@@ -25,10 +25,16 @@ export default {
     return {
       cities : {},
       hotCities : [],
-      letter : '' // 字母列表组件传来的值
+      letter : '',// 字母列表组件传来的值,
+      showMe : true
     }
   },
   methods : {
+    // 点击搜索框时,隐藏其他组件
+    handleShowMe (showMe) {
+      this.showMe = showMe
+      console.log(this.showMe)
+    },
     // 请求城市数据
     getCityInfo () {
       axios.get('/api/city.json')

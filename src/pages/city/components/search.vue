@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="search">
-      <input class="search-input" v-model="keyword" type="text" placeholder="输入城市名或拼音"/>
+      <input class="search-input"  v-on:focus="hideOthers" v-on:blur="showOthers" v-model="keyword" type="text" placeholder="输入城市名或拼音"/>
     </div>
-    <div class="search-content" ref="search" v-show="keyword">
+    <div class="search-content" ref="search" v-if="keyword">
       <ul>
         <li class="search-item border-bottom" v-for="item of list" :key="item.id" @click="handleChangeCity(item.name)">{{item.name}}</li>
-        <li class="search-item border-bottom" v-show="hasNoData">没有找到对应数据</li>
+        <li class="search-item border-bottom" v-if="hasNoData">没有找到对应数据</li>
       </ul>
     </div>
   </div>
@@ -21,6 +21,13 @@
       cities : Object
     },
     methods : {
+      // 隐藏显示字母列表
+      hideOthers () {
+        this.$emit('showMe' , false)
+      },
+      showOthers () {
+        this.$emit('showMe' , true)
+      },
       handleChangeCity (city) {
         // this.$store.commit('changeCity' , city)
         this.changeCity(city)

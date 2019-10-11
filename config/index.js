@@ -14,6 +14,7 @@ module.exports = {
       //本地开发时使用代理,转发api路径到本地的mock文件夹
       '/api' : {
         target : 'http://localhost:8080',
+        // target : 'http://10.200.82.41:8080',
         pathRewrite : {
           '^/api' : '/static/mock'
         }
@@ -22,6 +23,7 @@ module.exports = {
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
+    // host: '10.200.82.41',
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,

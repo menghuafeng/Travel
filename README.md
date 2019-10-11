@@ -46,6 +46,15 @@ static 静态目录,可以被外部访问到(可以将放一些模拟测试的�
 </script>
 *  scoped当组件有这个属性的时候,它的css样式仅仅作用于当前组件,实现了样式模块化(>>>样式穿透)
 <style lang="stylus" scoped></style>
+# vue主要命令
+* v-text {{}}   文本
+* v-html		    HTML
+* v-bind :		  属性绑定,用来绑定数据和属性以及表达式
+* v-model		    用来在表单控件元素上创建双向数据绑定,在表单元素外使用不起作用
+* v-if  v-else  v-else-if	条件语句
+* v-show		    根据条件展示元素
+* v-for		      循环语句
+* v-on  @		    事件监听
 
 ## 项目问题及注意事项
 # 路由
@@ -135,3 +144,23 @@ npm install vue-awesome-swiper@2.6.7 --save
 * v-leave：定义下半场过渡的初始状态；在过渡开始前被添加，在过渡开始时会被移除
 * v-leave-to：定义下半场过渡的结束状态；在过渡开始时被添加，在过渡完成时会被移除
 * v-leave-active：这里包含了上面的v-leave、v-leave-to两个时间段，在这里可以对下半场过渡定义过渡时间、曲线等
+
+# 注意事项
+* 在手机测试详情页面，向下滚动的时候头部header不会出现,在电脑端是可以的
+  解答：scrollTop的兼容性问题。const top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset
+* Android真机测试时城市列表页面点击事件不生效，点击城市无法跳转回主页
+这是因为better-scroll的原因。this.scroll = new BScroll(this.$refs.wrapper, {
+click: true // 一开始的点击事件被bscroll阻止了，设置这个才能点击
+});
+* 可能访问会有白屏问题,原因可能是浏览器不支持Promise对象
+npm install babel-polyfill
+* 将打包后的项目放到后端服务器自定义的目录下的时候,需要修改前端代码的打包路径
+config/index.js   build -> 修改assetsPublicPath参数重新打包即可
+* 组件的异步加载
+1. router目录下的index.js,修改routers内component: () => import ('@/pages/home/home')
+2. 在使用该组件的时候加载,调用者代码中components修改为如上写法
+* 使用IP访问项目
+在package.json的scripts配置项中添加--host 0.0.0.0,然后将index.js请求路径修改为IP地址
+
+# vue进阶
+router路由  vuex实现数据共享  vue服务器端渲染  vue各种资源组件
