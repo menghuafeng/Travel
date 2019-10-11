@@ -49,15 +49,15 @@ static 静态目录,可以被外部访问到(可以将放一些模拟测试的�
 
 ## 项目问题及注意事项
 # 路由
-根据不同的网址,返回不同的内容
-<router-view>  显示的是当前路由地址所对应的内容
+*  根据不同的网址,返回不同的内容
+*  <router-view>  显示的是当前路由地址所对应的内容
 # 统一手机样式
 reset.css
 # 手机一像素边框问题
 border.css
 # 点击事件延时300毫秒,使用fastclick第三方工具包
-bash命令 : npm install fastclick --save
-页面使用 : fastClick.attach(document.body)
+*  bash命令 : npm install fastclick --save
+*  页面使用 : fastClick.attach(document.body)
 # css开发辅助工具 stylus
 *  bash命令 : npm install stylus --save
           npm install stylus-loader --save
@@ -76,7 +76,7 @@ webpack.base.conf.js
 npm install vue-awesome-swiper@2.6.7 --save
 # 图标区域的页面布局(index-icon分支)
 
-#chrome插件Vue.js devtools
+# chrome插件Vue.js devtools
 扩展程序中打开"允许访问文件网址"
 
 # 使用axios发送ajax数据 (index-ajax分支)
@@ -118,3 +118,11 @@ npm install vue-awesome-swiper@2.6.7 --save
 
 # 组件的递归调用(detail-list)
 * 在组件内部调用本组件标签,实现递归
+
+# 使用ajax请求动态展示详情页面
+组件的name属性有三个用处:
+* 递归调用使用
+* keep-alive 的exclude和include配置是否缓存(大小写敏感)
+* 浏览器的devtools开发工具中展示的组件名字
+对于所有路由导航，简单地让页面滚动到顶部的方法
+* scrollBehavior (to, from, savedPosition) { return { x: 0, y: 0 } }

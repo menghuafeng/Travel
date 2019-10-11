@@ -69,10 +69,10 @@
       height : 0
       width : 100%
       // 底部留白
-      padding-bottom : 65%
+      padding-bottom : 100%
       .gallary-img
         width : 100%
       .swiper-pagination
         color : #fff
-        bottom : -3rem
+        bottom : -1rem
 </style>
