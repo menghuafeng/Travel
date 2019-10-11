@@ -126,3 +126,12 @@ npm install vue-awesome-swiper@2.6.7 --save
 * 浏览器的devtools开发工具中展示的组件名字
 对于所有路由导航，简单地让页面滚动到顶部的方法
 * scrollBehavior (to, from, savedPosition) { return { x: 0, y: 0 } }
+
+# 详情页面图片转换增加动画效果(detail-animation)
+用到组件transition,该组件有几个钩子函数:
+* v-enter：定义上半场过渡的初始状态；在过渡开始前被添加，在过渡开始时会被移除
+* v-enter-to：定义上半场过渡的结束状态；在过渡开始时被添加，在过渡完成时会被移除
+* v-enter-active：这里包含了上面的v-enter、v-enter-to两个时间段，在这里可以对上半场过渡定义过渡时间、曲线等
+* v-leave：定义下半场过渡的初始状态；在过渡开始前被添加，在过渡开始时会被移除
+* v-leave-to：定义下半场过渡的结束状态；在过渡开始时被添加，在过渡完成时会被移除
+* v-leave-active：这里包含了上面的v-leave、v-leave-to两个时间段，在这里可以对下半场过渡定义过渡时间、曲线等
