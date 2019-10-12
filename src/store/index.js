@@ -5,20 +5,18 @@ import mutation from './mutation'
 
 Vue.use(Vuex)
 
-
 export default new Vuex.Store({
-  state : state ,
+  state: state,
   // actions : {
   //   changeCity (ctx , city) {
   //     ctx.commit('changeCity' , city)
   //   }
   // },
-  mutations : mutation ,
-
+  mutations: mutation,
 
   // 类似computed 可以对state中的属性进行计算,避免数据的冗余
-  getters : {
-    doubleCity(state){
+  getters: {
+    doubleCity (state) {
       return state.city + ' ' + state.city
     }
   }

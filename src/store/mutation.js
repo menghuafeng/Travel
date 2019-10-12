@@ -1,8 +1,8 @@
 export default {
-  changeCity (state , city) {
+  changeCity (state, city) {
     state.city = city
-    try{
+    try {
       localStorage.city = city
-    }catch(e){}
+    } catch (e) {}
   }
 }

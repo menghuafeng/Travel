@@ -18,43 +18,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  props : {
-    weekendList : Array
-  },
-  data(){
-    return {
-      // weekendList: [{
-      //   id: '001',
-      //   imgUrl: 'http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
-      //   desc: '在帝都过周末，不仅仅是城中游！',
-      //   title: '京城周末撒欢'
-      // },{
-      //   id: '002',
-      //   imgUrl: 'http://img1.qunarzz.com/sight/source/1505/9e/21df651e19af5d.jpg_r_640x214_3ea5bb38.jpg',
-      //   desc: '日佛耳机foe金融割肉几个偶然间狗儿剧哦大佛VR噢弄哦日',
-      //   title: '的防守打法'
-      // },{
-      //   id: '003',
-      //   imgUrl: 'http://img1.qunarzz.com/sight/source/1811/7e/476589267ebb41.jpg_r_640x214_bf599709.jpg',
-      //   desc: '日佛耳机foe金融割肉几个偶然间狗儿剧哦大佛VR噢弄哦日',
-      //   title: '兔兔'
-      // },{
-      //   id: '004',
-      //   imgUrl: 'http://img1.qunarzz.com/sight/source/1811/7e/476589267ebb41.jpg_r_640x214_bf599709.jpg',
-      //   desc: '日佛耳机foe金融割肉几个偶然间狗儿剧哦大佛VR噢弄哦日',
-      //   title: '北京 谷'
-      // },{
-      //   id: '005',
-      //   imgUrl: 'http://img1.qunarzz.com/sight/source/1505/9e/21df651e19af5d.jpg_r_640x214_3ea5bb38.jpg',
-      //   desc: '日佛耳机foe金融割肉几个偶然间狗儿剧哦大佛VR噢弄哦日',
-      //   title: ' 欢乐谷'
-      // },{
-      //   id: '006',
-      //   imgUrl: 'http://img1.qunarzz.com/sight/source/1505/ce/bc89bc2f0e33ea.jpg_r_640x214_3e408453.jpg',
-      //   desc: '日佛耳机foe金融割肉几个偶然间狗儿剧哦大佛VR噢弄哦日',
-      //   title: ' 京欢乐谷'
-      // }]
-    }
+  props: {
+    weekendList: Array
   }
 }
 </script>

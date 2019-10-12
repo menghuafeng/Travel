@@ -9,27 +9,27 @@
 
 <script>
 import axios from 'axios'
-import CityHeader from "./components/header";
-import CitySearch from "./components/search";
-import CityList from "./components/list"
-import CityAlphabet from "./components/alphabet"
+import CityHeader from './components/header'
+import CitySearch from './components/search'
+import CityList from './components/list'
+import CityAlphabet from './components/alphabet'
 export default {
-  name : 'City',
+  name: 'City',
   components: {
     CityHeader,
     CitySearch,
     CityList,
-    CityAlphabet,
+    CityAlphabet
   },
   data () {
     return {
-      cities : {},
-      hotCities : [],
-      letter : '',// 字母列表组件传来的值,
-      showMe : true
+      cities: {},
+      hotCities: [],
+      letter: '', // 字母列表组件传来的值,
+      showMe: true
     }
   },
-  methods : {
+  methods: {
     // 点击搜索框时,隐藏其他组件
     handleShowMe (showMe) {
       this.showMe = showMe
@@ -55,7 +55,7 @@ export default {
     }
   },
   mounted () {
-    this.getCityInfo();
+    this.getCityInfo()
   }
 }
 </script>

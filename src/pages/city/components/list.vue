@@ -34,47 +34,47 @@
 </template>
 
 <script>
-  import Bscroll from 'better-scroll'
-  import { mapState , mapMutations } from 'vuex'
-  export default {
-    name: 'CityList',
-    props : {
-      cities : Object,
-      hotCities : Array,
-      letter : String
+import Bscroll from 'better-scroll'
+import { mapState, mapMutations } from 'vuex'
+export default {
+  name: 'CityList',
+  props: {
+    cities: Object,
+    hotCities: Array,
+    letter: String
+  },
+  computed: {
+    // ...展开运算符,将一个数组转为用逗号分隔的参数序列
+    ...mapState({
+      // 将vuex中的city映射到当前的currentCity
+      currentCity: 'city'
+    })
+  },
+  methods: {
+    handleChangeCity (city) {
+      // this.$store.commit('changeCity' , city)
+      this.changeCity(city)
+      this.$router.push('/')
     },
-    computed : {
-      // ...展开运算符,将一个数组转为用逗号分隔的参数序列
-      ...mapState({
-        // 将vuex中的city映射到当前的currentCity
-        currentCity : 'city'
-      })
-    },
-    methods : {
-      handleChangeCity (city) {
-        // this.$store.commit('changeCity' , city)
-        this.changeCity(city)
-        this.$router.push('/')
-      },
-      // 将changeCity属性/方法 映射到当前的changeCity属性/方法中
-      ...mapMutations(['changeCity'])
-    },
-    mounted () {
-      this.scroll = new Bscroll(this.$refs.wrapper , {
-        click : true
-      })
-    },
-    watch : {
-      letter () {
-        // console.log(this.letter)
-        if (this.letter) {
-          // 这里的Bscroll可以滚动定位,但是需要传递一个dom元素或者dom选择器进去,所以[0]表示第一个元素
-          const element = this.$refs[this.letter][0]
-          this.scroll.scrollToElement(element)
-        }
+    // 将changeCity属性/方法 映射到当前的changeCity属性/方法中
+    ...mapMutations(['changeCity'])
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.wrapper, {
+      click: true
+    })
+  },
+  watch: {
+    letter () {
+      // console.log(this.letter)
+      if (this.letter) {
+        // 这里的Bscroll可以滚动定位,但是需要传递一个dom元素或者dom选择器进去,所以[0]表示第一个元素
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
       }
     }
   }
+}
 </script>
 
 <style lang="stylus" scoped>

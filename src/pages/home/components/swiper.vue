@@ -12,26 +12,19 @@
 
 <script>
 export default {
-  name : 'HomeSwiper',
-  props : {
-    swiperList : Array
+  name: 'HomeSwiper',
+  props: {
+    swiperList: Array
   },
-  data(){
+  data () {
     return {
-      swiperOption : {
-        pagination : '.swiper-pagination',
-        loop : true
-      },
-      // swiperList : [{
-      //   id : '001',
-      //   imgUrl : 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/d7bbc21db442366a882e04ddc984669a.jpg_750x200_85e640d9.jpg'
-      // },{
-      //   id : '002',
-      //   imgUrl : 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/942d87cc1576c333c77dc1f86af145cd.jpg_750x200_d25bf3eb.jpg'
-      // }]
+      swiperOption: {
+        pagination: '.swiper-pagination',
+        loop: true
+      }
     }
   },
-  computed : {
+  computed: {
     showSwiper () {
       return this.swiperList.length
     }

@@ -5,9 +5,9 @@
 </template>
 
 <script>
-  export default {
-    name : 'Fade'
-  }
+export default {
+  name: 'Fade'
+}
 </script>
 
 <style lang="stylus" scoped>

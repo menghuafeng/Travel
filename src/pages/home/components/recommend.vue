@@ -22,53 +22,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  props : {
-    recommendList : Array
-  },
-  data(){
-    return {
-      // recommendList: [{
-      //   id: '001',
-      //   imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg',
-      //   desc: '日佛耳机foe金融割肉几个偶然间狗儿剧哦大佛VR噢弄哦日',
-      //   title: '北京欢乐谷'
-      // },{
-      //   id: '002',
-      //   imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg',
-      //   desc: '日佛耳机foe金融割肉几个偶然间狗儿剧哦大佛VR噢弄哦日',
-      //   title: '的防守打法'
-      // },{
-      //   id: '003',
-      //   imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg',
-      //   desc: '日佛耳机foe金融割肉几个偶然间狗儿剧哦大佛VR噢弄哦日',
-      //   title: '兔兔'
-      // },{
-      //   id: '004',
-      //   imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg',
-      //   desc: '日佛耳机foe金融割肉几个偶然间狗儿剧哦大佛VR噢弄哦日',
-      //   title: '北京 谷'
-      // },{
-      //   id: '005',
-      //   imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg',
-      //   desc: '日佛耳机foe金融割肉几个偶然间狗儿剧哦大佛VR噢弄哦日',
-      //   title: ' 欢乐谷'
-      // },{
-      //   id: '006',
-      //   imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg',
-      //   desc: '日佛耳机foe金融割肉几个偶然间狗儿剧哦大佛VR噢弄哦日',
-      //   title: ' 京欢乐谷'
-      // },{
-      //   id: '007',
-      //   imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg',
-      //   desc: '日佛耳机foe金融割肉几个偶然间狗儿剧哦大佛VR噢弄哦日',
-      //   title: ' 乐谷'
-      // },{
-      //   id: '008',
-      //   imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg',
-      //   desc: '日佛耳机foe金融割肉几个偶然间狗儿剧哦大佛VR噢弄哦日',
-      //   title: ' 谷'
-      // }]
-    }
+  props: {
+    recommendList: Array
   }
 }
 </script>

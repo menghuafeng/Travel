@@ -18,23 +18,23 @@ import { mapState } from 'vuex'
 export default {
   name: 'HelloWorld',
   components: {
-    HomeHeader : () => import ('./components/header'),
+    HomeHeader: () => import('./components/header'),
     HomeSwiper,
     HomeIcons,
     HomeRecommend,
-    HomeWeekend,
+    HomeWeekend
   },
-  data (){
+  data () {
     return {
-      lastCity : '',
-      iconList : [],
-      recommendList : [],
-      swiperList : [],
-      weekendList : []
+      lastCity: '',
+      iconList: [],
+      recommendList: [],
+      swiperList: [],
+      weekendList: []
     }
   },
-  computed : {
-    ...mapState(['city']),
+  computed: {
+    ...mapState(['city'])
   },
   methods: {
     getHomeInfo () {
@@ -57,7 +57,7 @@ export default {
     this.getHomeInfo()
   },
   activated () {
-    if(this.lastCity !== this.city){
+    if (this.lastCity !== this.city) {
       this.lastCity = this.city
       this.getHomeInfo()
     }

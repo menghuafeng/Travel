@@ -13,69 +13,69 @@
 </template>
 
 <script>
-  import Bscroll from "better-scroll"
-  import { mapMutations } from 'vuex'
-  export default {
-    name : 'CitySearch',
-    props : {
-      cities : Object
+import Bscroll from 'better-scroll'
+import { mapMutations } from 'vuex'
+export default {
+  name: 'CitySearch',
+  props: {
+    cities: Object
+  },
+  methods: {
+    // 隐藏显示字母列表
+    hideOthers () {
+      this.$emit('showMe', false)
     },
-    methods : {
-      // 隐藏显示字母列表
-      hideOthers () {
-        this.$emit('showMe' , false)
-      },
-      showOthers () {
-        this.$emit('showMe' , true)
-      },
-      handleChangeCity (city) {
-        // this.$store.commit('changeCity' , city)
-        this.changeCity(city)
-        this.$router.push('/')
-      },
-      ...mapMutations(['changeCity'])
+    showOthers () {
+      this.$emit('showMe', true)
     },
-    mounted () {
-      this.scroll = new Bscroll(this.$refs.search)
+    handleChangeCity (city) {
+      // this.$store.commit('changeCity' , city)
+      this.changeCity(city)
+      this.$router.push('/')
     },
-    data () {
-      return {
-        keyword : '',
-        list : [],
-        timer : null
+    ...mapMutations(['changeCity'])
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.search)
+  },
+  data () {
+    return {
+      keyword: '',
+      list: [],
+      timer: null
+    }
+  },
+  computed: {
+    hasNoData () {
+      return !this.list.length
+    }
+  },
+  watch: {
+    keyword () {
+      if (this.timer) {
+        clearTimeout(this.timer)
       }
-    },
-    computed : {
-      hasNoData () {
-        return !this.list.length
+      if (!this.keyword) {
+        this.list = []
+        return
       }
-    },
-    watch : {
-      keyword () {
-        if (this.timer) {
-          clearTimeout(this.timer)
+      this.timer = setTimeout(() => {
+        const result = []
+        // 遍历城市集合
+        for (let i in this.cities) {
+          // 遍历每条城市数据的属性
+          this.cities[i].forEach((value) => {
+            // 判断每条数据内name和拼音是否能够匹配输入的搜索内容
+            if (value.spell.indexOf(this.keyword) > -1 || value.name.indexOf(this.keyword) > -1) {
+              result.push(value)
+            }
+          })
         }
-        if (!this.keyword) {
-          this.list = []
-          return
-        }
-        this.timer = setTimeout (() => {
-          const result = []
-          // 遍历城市集合
-          for(let i in this.cities){
-            // 遍历每条城市数据的属性
-            this.cities[i].forEach((value) => {
-              // 判断每条数据内name和拼音是否能够匹配输入的搜索内容
-              if(value.spell.indexOf(this.keyword) > -1 || value.name.indexOf(this.keyword) > -1){
-                result.push(value)
-              }
-            })
-          }
-          this.list = result
-        } , 100)
-      }
+        this.list = result
+      }, 100)
     }
   }
+}
 </script>
 
 <style lang = "stylus" scoped>

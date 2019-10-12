@@ -13,35 +13,35 @@
 </template>
 
 <script>
-  export default {
-    name : 'CommonGallary',
-    props : {
-      imgs : {
-        type : Array,
-        default(){
-          return []
-        }
-      }
-    },
-    data (){
-      return{
-        swiperOption : {
-          pagination : '.swiper-pagination',
-          paginationType : 'fraction',
-          // 环路,让页面转换看起来是循环的
-          loop : true,
-          // 监听swiper的样式或者子级元素 / 父元素发生变化的时候,自动更新
-          observer : true,
-          observeParents : true
-        }
-      }
-    },
-    methods : {
-      handleGallaryClick (){
-        this.$emit('close')
+export default {
+  name: 'CommonGallary',
+  props: {
+    imgs: {
+      type: Array,
+      default () {
+        return []
       }
     }
+  },
+  data () {
+    return {
+      swiperOption: {
+        pagination: '.swiper-pagination',
+        paginationType: 'fraction',
+        // 环路,让页面转换看起来是循环的
+        loop: true,
+        // 监听swiper的样式或者子级元素 / 父元素发生变化的时候,自动更新
+        observer: true,
+        observeParents: true
+      }
+    }
+  },
+  methods: {
+    handleGallaryClick () {
+      this.$emit('close')
+    }
   }
+}
 </script>
 
 <style lang="stylus" scoped>

@@ -19,33 +19,33 @@
 </template>
 
 <script>
-  import CommonGallary from 'common/gallary/gallary'
-  import Fade from 'common/fade/fade'
-  export default {
-    name : 'DetailBanner',
-    props : {
-      sightName : String,
-      bannerImg : String,
-      bannerImgs : Array
-    },
-    data () {
-      return {
-        showGallay : false,
-      }
-    },
-    methods : {
-      handleBannerClick () {
-        this.showGallay = true
-      },
-      handleGallaryClose () {
-        this.showGallay = false
-      }
-    },
-    components : {
-      CommonGallary : CommonGallary,
-      Fade : Fade
+import CommonGallary from 'common/gallary/gallary'
+import Fade from 'common/fade/fade'
+export default {
+  name: 'DetailBanner',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    bannerImgs: Array
+  },
+  data () {
+    return {
+      showGallay: false
     }
+  },
+  methods: {
+    handleBannerClick () {
+      this.showGallay = true
+    },
+    handleGallaryClose () {
+      this.showGallay = false
+    }
+  },
+  components: {
+    CommonGallary: CommonGallary,
+    Fade: Fade
   }
+}
 </script>
 
 <style lang="stylus" scoped>

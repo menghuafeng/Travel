@@ -7,17 +7,17 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: () => import ('@/pages/home/home')
+      component: () => import('@/pages/home/home')
     },
     {
       path: '/city',
       name: 'City',
-      component: () => import ('@/pages/city/city')
+      component: () => import('@/pages/city/city')
     },
     {
       path: '/detail/:id',
       name: 'Detail',
-      component: () => import ('@/pages/detail/detail')
+      component: () => import('@/pages/detail/detail')
     }
   ],
   // vue-router 对于所有路由导航，简单地让页面滚动到顶部

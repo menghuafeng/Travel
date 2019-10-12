@@ -12,37 +12,37 @@
 </template>
 
 <script>
-  export default {
-    name : 'DetailHeader',
-    data () {
-      return {
-        showHeader : true,
-        // 不透明级别 0.0(完全透明)到 1.0(完全不透明)
-        opacityStyle : {
-          opacity : 0
-        }
+export default {
+  name: 'DetailHeader',
+  data () {
+    return {
+      showHeader: true,
+      // 不透明级别 0.0(完全透明)到 1.0(完全不透明)
+      opacityStyle: {
+        opacity: 0
       }
-    },
-    methods : {
-      handleScoll () {
-        const top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset
-        if (top > 60) {
-          let opacity = top / 140
-          opacity = opacity > 1 ? 1 : opacity
-          this.opacityStyle = { opacity : opacity}
-          this.showHeader = false
-        } else {
-          this.showHeader = true
-        }
-      }
-    },
-    activated () {
-      window.addEventListener('scroll' , this.handleScoll)
-    },
-    deactivated (){
-      window.removeEventListener('scroll' , this.handleScoll)
     }
+  },
+  methods: {
+    handleScoll () {
+      const top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset
+      if (top > 60) {
+        let opacity = top / 140
+        opacity = opacity > 1 ? 1 : opacity
+        this.opacityStyle = {opacity: opacity}
+        this.showHeader = false
+      } else {
+        this.showHeader = true
+      }
+    }
+  },
+  activated () {
+    window.addEventListener('scroll', this.handleScoll)
+  },
+  deactivated () {
+    window.removeEventListener('scroll', this.handleScoll)
   }
+}
 </script>
 
 <style lang="stylus" scoped>

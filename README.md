@@ -164,3 +164,28 @@ config/index.js   build -> 修改assetsPublicPath参数重新打包即可
 
 # vue进阶
 router路由  vuex实现数据共享  vue服务器端渲染  vue各种资源组件
+
+# 代码格式化
+1. webpack.base.config.js
+{
+     test: /\.(js|vue)$/,
+     loader: 'eslint-loader',
+     enforce: 'pre',
+     include: [resolve('src'), resolve('test')],
+     options: {
+      formatter: require('eslint-friendly-formatter')
+     }
+}
+2. package.json
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-vue": "^4.0.0",
+3. 拷贝.eslintignore和.eslintrc.js文件
+4. 删除node_modules目录,重新npm install
