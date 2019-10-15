@@ -3,7 +3,7 @@
     <div class="search">
       <input class="search-input"  v-on:focus="hideOthers" v-on:blur="showOthers" v-model="keyword" type="text" placeholder="输入城市名或拼音"/>
     </div>
-    <div class="search-content" ref="search" v-if="keyword">
+    <div class="search-content" ref="search" v-show="keyword">
       <ul>
         <li class="search-item border-bottom" v-for="item of list" :key="item.id" @click="handleChangeCity(item.name)">{{item.name}}</li>
         <li class="search-item border-bottom" v-if="hasNoData">没有找到对应数据</li>

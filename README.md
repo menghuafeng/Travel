@@ -189,3 +189,8 @@ router路由  vuex实现数据共享  vue服务器端渲染  vue各种资源组�
     "eslint-plugin-vue": "^4.0.0",
 3. 拷贝.eslintignore和.eslintrc.js文件
 4. 删除node_modules目录,重新npm install
+
+# BUG修复,search.vue页面搜索结果无法滚动
+v-show将元素隐藏是在dom节点上加style=’display:none’ 
+v-if是直接将元素完全去掉
+这里在初始化Bscroll时,如果使用v-if,无法获取dom元素
